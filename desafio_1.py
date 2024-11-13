@@ -14,7 +14,7 @@ class Filme:
         status = "Indisponível" if self.disponivel == False else "Disponível"
         
     def devolver(self):
-        status = "Disponível" if self.disponivel == True else "Emprestado"
+        status = "Disponível" if self.disponivel == True else "Indisponível"
         
         
         
