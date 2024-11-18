@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Filmes</title>
+</head>
+<body>
+    <h1>Lista de Filmes</h1>
+    <ul>
+        {% for filme in filmes %}
+        <li>
+            {{ filme.titulo }} ({{ filme.ano}}) - {{ filme.genero }}
+            {% if filme.disponivel %}
+            <a href="{{ url_for('alugar_filme', filme_id=loop.index) }}">Alugar</a>
+            {% else %}
+            <a href="{{ url_for('devolver_filme', filme_id=loop.index) }}">Devolver</a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
